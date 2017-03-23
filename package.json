@@ -1,0 +1,11 @@
+{
+  "name": "getir-hackathon-2017",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/usameavci/getir-bitaksi-hackathon-2017.git",
+  "author": "Üsame Fethullah AVCI <u@gaaraj.com>",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^5.0.4"
+  }
+}
