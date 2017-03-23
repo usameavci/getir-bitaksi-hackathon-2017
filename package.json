@@ -6,6 +6,10 @@
   "author": "Üsame Fethullah AVCI <u@gaaraj.com>",
   "license": "MIT",
   "dependencies": {
-    "serve": "^5.0.4"
+    "serve": "^5.0.4",
+    "bower": "1.8.x"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
   }
 }
