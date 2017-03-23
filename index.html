@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Getir - biTaksi Hackathon 2017</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/primer-css-compiled/build/build.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/angularjs-datepicker/dist/angular-datepicker.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/app.css">
+</head>
+
+<body data-ng-app="HackathonApp" data-ng-controller="MainController as vm">
+  <div class="container app-main">
+    <div class="columns">
+      <div class="one-half column">
+        <h2>Hackathon Program</h2>
+        <div class="flash flash-error" data-ng-if=" vm.errorMessage ">{{ vm.errorMessage }}</div>
+        <form name="formRecords" data-ng-submit=" vm.getRecords(vm.formDataRecords) " novalidate data-bs-loading-overlay data-bs-loading-overlay-reference-id="loading-records">
+          <dl class="form-group">
+            <dt>
+              <label>Başlangıç Tarihi</label>
+            </dt>
+            <dd>
+              <datepicker date-format="yyyy-MM-dd">
+                <input data-ng-model="vm.formDataRecords.startDate" class="form-control" type="text" required>
+              </datepicker>
+            </dd>
+          </dl>
+          <dl class="form-group">
+            <dt>
+              <label>Bitiş Tarihi</label>
+            </dt>
+            <dd>
+              <datepicker date-format="yyyy-MM-dd">
+                <input data-ng-model="vm.formDataRecords.endDate" class="form-control" type="text" required>
+              </datepicker>
+            </dd>
+          </dl>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" data-ng-disabled=" formRecords.$invalid ">GETİR</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="app-results" data-ng-if=" vm.dataRecords.length > 0 ">
+      <h3>Sonuçlar</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Anahtar</td>
+            <td>Değer</td>
+            <td>Oluşturulma</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat=" item in vm.dataRecords ">
+            <td>{{ item.key }}</td>
+            <td class="break-all">{{ item.value }}</td>
+            <td>{{ item.createdAt }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script type="text/ng-template" id="spinner.html">
+    <div class="spinner-wrapper">
+      <div class="la-ball-spin-clockwise la-dark">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </script>
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-loading-overlay/dist/angular-loading-overlay.js"></script>
+  <script type="text/javascript" src="bower_components/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
+  <script type="text/javascript" src="scripts/app.js"></script>
+  <script type="text/javascript" src="scripts/main-controller.js"></script>
+</body>
+
+</html>
