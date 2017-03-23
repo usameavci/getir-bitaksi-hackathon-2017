@@ -1,0 +1,23 @@
+{
+  "name": "getir-hackathon-2017",
+  "authors": [
+    "Üsame Fethullah AVCI <u@gaaraj.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-loading-overlay": "^1.1.1",
+    "angularjs-datepicker": "^2.1.15",
+    "angular": "1.6.3",
+    "primer-css-compiled": "*"
+  }
+}
